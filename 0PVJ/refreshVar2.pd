@@ -1,0 +1,28 @@
+#N canvas 572 210 391 308 10;
+#X obj 260 100 table \$0-t 25;
+#X obj 122 110 b;
+#X obj 24 23 inlet num var;
+#X obj 24 49 s \$0-t;
+#X obj 149 216 tabread \$0-t;
+#X obj 122 194 t f f;
+#X obj 122 239 pack f f;
+#X obj 122 18 inlet on;
+#X obj 263 35 loadbang;
+#X msg 263 57 0;
+#X obj 122 88 gemhead 1;
+#X msg 183 53 1;
+#X obj 122 262 outlet num var;
+#X msg 122 133 1 \, 2 \, 3 \, 4 \, 5 \, 6 \, 7 \, 8 \, 9 \, 10 \, 11
+\, 12 \, 13 \, 14 \, 15 \, 16 \, 17 \, 18 \, 19 \, 20, f 29;
+#X connect 1 0 13 0;
+#X connect 2 0 3 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 0;
+#X connect 5 1 4 0;
+#X connect 6 0 12 0;
+#X connect 7 0 10 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 1 0;
+#X connect 11 0 10 0;
+#X connect 13 0 5 0;

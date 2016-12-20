@@ -1,0 +1,58 @@
+#N canvas 2373 483 843 597 10;
+#X obj 53 158 pix_image;
+#X obj 314 225 pix_texture;
+#X obj 319 38 gemhead;
+#X obj 489 105 gemwin;
+#X msg 485 72 dimen 800 600 \, create \, 1;
+#X obj 67 108 openpanel;
+#X obj 63 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 67 130 open \$1;
+#X obj 309 286 square;
+#X obj 386 276 circle;
+#X obj 318 169 rotateXYZ;
+#X floatatom 332 132 5 0 0 0 - - -, f 5;
+#X floatatom 370 132 5 0 0 0 - - -, f 5;
+#X floatatom 409 127 5 0 0 0 - - -, f 5;
+#X obj 319 79 translateXYZ;
+#X floatatom 375 51 5 0 0 0 - - -, f 5;
+#X obj 51 182 pix_texture;
+#X obj 109 206 s ninjaTexture;
+#X obj 376 197 r ninjaTexture;
+#X obj 52 44 gemhead;
+#X text 109 441 fond : média \, fade \, couleur;
+#X text 107 337 médias (images \, films \, framebuffers);
+#X text 109 472 son : influence sur fade \, scale \, rotation \, couleur
+\, composition des framebuffers;
+#X text 110 516 presets : positions des projs / caracteristiques image
+/ moteurs effets (fades \, rotations \, couleurs \, tremblements \,
+framebuffers);
+#X text 107 358 parapluies (cercles) : x \, y \, rotX \, rotY \, size
+;
+#X text 109 382 projecteurs : média \, fade (alpha) \, couleur \,
+scale \, rotation coordonnées de texure pour le média : 2 positions
+full/zoom \, numéro de parapluie \, forme (cercle \, cone \, sphere
+\, square \, cube);
+#X floatatom 426 30 5 0 0 0 - - -, f 5;
+#X floatatom 440 71 5 0 0 0 - - -, f 5;
+#X obj 670 264 f;
+#X obj 485 20 bng 15 250 50 1 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 16 0;
+#X connect 2 0 14 0;
+#X connect 4 0 3 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X connect 7 0 0 0;
+#X connect 10 0 1 0;
+#X connect 11 0 10 1;
+#X connect 12 0 10 2;
+#X connect 13 0 10 3;
+#X connect 14 0 10 0;
+#X connect 15 0 14 1;
+#X connect 16 1 17 0;
+#X connect 18 0 1 1;
+#X connect 19 0 0 0;
+#X connect 26 0 14 2;
+#X connect 27 0 14 3;
+#X connect 29 0 4 0;

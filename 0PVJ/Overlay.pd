@@ -1,0 +1,50 @@
+#N canvas 38 291 621 271 10;
+#X obj 103 122 vradio 8 1 0 3 \$0-mediaType-snd \$0-mediaType-rcv empty
+0 -8 0 10 -257985 -1 -1 0;
+#X text 111 117 film;
+#X text 111 126 img;
+#X text 110 135 fb;
+#X obj 103 147 nbx 2 10 1 99 0 0 \$0-mediaNumber-snd \$0-mediaNumber-rcv
+empty 0 -8 0 10 -262144 -1 -1 1 256;
+#X obj 233 68 separator;
+#X obj 233 153 rectangle 16 4;
+#X obj 145 121 hsl 40 8 0 1 0 0 \$0-R-snd \$0-R-rcv empty -2 -8 0 10
+-258113 -1 -1 0 1;
+#X obj 145 130 hsl 40 8 0 1 0 0 \$0-V-snd \$0-V-rcv empty -2 -8 0 10
+-4034 -1 -1 0 1;
+#X obj 145 139 hsl 40 8 0 1 0 0 \$0-B-snd \$0-B-rcv empty -2 -8 0 10
+-4032 -1 -1 0 1;
+#X obj 145 148 hsl 40 8 0 1 0 0 \$0-alpha-snd \$0-alpha-rcv empty -2
+-8 0 10 -262144 -1 -1 0 1;
+#X obj 133 148 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 165 78 1;
+#X obj 357 73 apf PVJprojs \$1-R \$0-R;
+#X obj 357 92 apf PVJprojs \$1-V \$0-V;
+#X obj 357 115 apf PVJprojs \$1-B \$0-B;
+#X obj 358 136 apf PVJprojs \$1-alpha \$0-alpha;
+#X obj 369 178 r \$0-alpha-snd;
+#X obj 369 200 s \$0-alpha;
+#X obj 233 43 r PVJOverHead;
+#X obj 233 90 alpha;
+#X obj 233 125 media \$0 \$1;
+#X obj 548 132 r \$0-R-snd;
+#X obj 548 152 s \$0-R;
+#X obj 547 175 r \$0-V-snd;
+#X obj 547 195 s \$0-V;
+#X obj 547 216 r \$0-B-snd;
+#X obj 547 236 s \$0-B;
+#X connect 5 0 20 0;
+#X connect 11 0 12 0;
+#X connect 12 0 7 0;
+#X connect 12 0 8 0;
+#X connect 12 0 9 0;
+#X connect 12 0 10 0;
+#X connect 17 0 18 0;
+#X connect 19 0 5 0;
+#X connect 20 0 21 0;
+#X connect 21 0 6 0;
+#X connect 22 0 23 0;
+#X connect 24 0 25 0;
+#X connect 26 0 27 0;
+#X coords 0 -1 1 1 90 60 1 100 100;

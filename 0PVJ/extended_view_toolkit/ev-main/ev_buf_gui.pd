@@ -1,0 +1,21 @@
+#N canvas 200 59 1055 651 10;
+#X obj 100 10 cnv 15 850 16 empty empty EXTENDED_VIEW_FRAMEBUFFER 20
+8 0 14 -233017 -66577 0;
+#X obj 99 318 cnv 15 360 60 empty empty creation_arguments: 5 12 0
+12 -162280 -1 0;
+#X text 102 334 1st: module ID;
+#X obj 102 200 cnv 15 200 100 empty empty gui_controls 5 8 0 12 -204800
+-66577 0;
+#X text 102 239 scale x/y: scales the buffers;
+#X text 168 228 content;
+#X text 102 217 shift x/y: translates the buffers;
+#X text 168 248 content;
+#X text 102 261 dimen x/y: dimension of the FB;
+#X text 102 273 on/off: toggles state;
+#X text 102 286 rotate: rotate content;
+#X text 102 346 2nd: storage domain;
+#X text 103 492 (c)2016 Peter Venus & Marian Weger \; /part of EXTENDED
+VIEW toolkit/ gpl v3;
+#X obj 100 115 abs/ev_buf_rcu \$1 \$2;
+#X obj 111 52 abs/ev_buf_osc \$1 \$2;
+#X coords 0 -1 1 1 270 75 1 100 100;

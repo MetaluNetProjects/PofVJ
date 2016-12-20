@@ -1,0 +1,45 @@
+#N canvas 296 69 650 498 10;
+#X text 296 47 inlet 1: gemlist;
+#X obj 42 28 cnv 15 600 16 empty empty EXTENDED_VIEW_Camera/VideoInput_MODULE
+2 8 0 14 -233017 -66577 0;
+#X obj 42 299 cnv 15 240 60 empty empty creation_arguments: 5 12 0
+12 -162280 -1 0;
+#X obj 42 362 cnv 15 240 120 empty empty inlets/outlets 5 12 0 12 -233017
+-66577 0;
+#X text 47 382 Inlet 1: GEMlist;
+#X text 47 397 Inlet 2: settings for [pix_video];
+#X text 418 46 inlet 2: pix_video settings;
+#N canvas 499 138 387 328 init 0;
+#X obj 31 24 loadbang;
+#X obj 31 48 list append \$1;
+#X msg 31 75 \; /ev/cam/\$1/state 1 \; /ev/cam/\$1/flip/vertical 0
+\; /ev/cam/\$1/flip/horizontal 0 \;;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X coords 0 328 1 327 85 60 0;
+#X restore 179 68 pd init;
+#X obj 297 65 inlet gemlist;
+#X obj 297 149 outlet gemlist;
+#X obj 420 65 inlet settings;
+#X obj 42 184 cnv 15 240 110 empty empty GUI_controls 5 8 0 12 -204800
+-66577 0;
+#X text 44 260 on/off: toggles state;
+#X text 44 201 flip: flip image;
+#X text 81 216 <-> horizontal;
+#X text 81 229 ^v vertical;
+#X text 48 410 Outlet 1: GEMlist;
+#X obj 101 48 abs/ev_cam_osc \$1 \$2;
+#N canvas 288 75 638 358 storage 0;
+#X obj 93 158 ds_reg \$2 /ev/cam/\$1/flip/horizontal nomorph;
+#X obj 93 178 ds_reg \$2 /ev/cam/\$1/flip/vertical nomorph;
+#X obj 93 138 ds_reg \$2 /ev/cam/\$1/state nomorph;
+#X restore 101 67 pd storage;
+#X obj 100 132 abs/ev_cam_rcu \$1 \$2;
+#X text 45 447 (c)2016 Peter Venus & Marian Weger \; /part of EXTENDED
+VIEW toolkit/ gpl v3;
+#X text 45 315 1st: module ID \; 2nd: storage domain;
+#X obj 297 100 ev_cam_dsp \$1 \$2;
+#X connect 8 0 22 0;
+#X connect 10 0 22 1;
+#X connect 22 0 9 0;
+#X coords 0 -1 1 1 180 54 1 100 118;

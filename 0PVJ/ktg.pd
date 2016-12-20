@@ -1,0 +1,17 @@
+#N canvas 52 92 506 276 10;
+#X obj 49 125 r ktg-\$2-\$1-snd;
+#X obj 49 156 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 53 21 apf PVJKEP ktg-\$2-\$1 ktg-\$2-\$1;
+#X obj 49 233 s ktg-\$2-\$1-rcv;
+#X obj 49 176 sel 0 1;
+#X msg 49 205 color 0 0 22;
+#X msg 147 206 color 16 16 22;
+#X obj 222 139 loadbang;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 1 6 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 5 0;

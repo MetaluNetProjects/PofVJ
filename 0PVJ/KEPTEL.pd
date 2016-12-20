@@ -1,0 +1,134 @@
+#N canvas 836 75 600 650 10;
+#X obj 15 29 hsl 80 15 0 1 0 0 ktb-\$1-b1-snd ktb-\$1-b1-rcv Atac 5
+8 0 10 -1 -162280 -262144 0 1;
+#X obj 15 45 hsl 80 15 0 1 0 0 ktbs-\$1-b1-snd ktbs-\$1-b1-rcv Atac
+5 8 0 10 -128992 -262144 -1 0 1;
+#X obj 15 62 hsl 80 15 0 1 0 0 ktb-\$1-b2-snd ktb-\$1-b2-rcv Time 5
+8 0 10 -1 -162280 -262144 1700 1;
+#X obj 15 78 hsl 80 15 0 1 0 0 ktbs-\$1-b2-snd ktbs-\$1-b2-rcv Vitesse
+5 8 0 10 -128992 -262144 -1 0 1;
+#X obj 15 95 hsl 80 15 0 1 0 0 ktb-\$1-b3-snd ktb-\$1-b3-rcv Ofset
+5 8 0 10 -1 -162280 -262144 3900 1;
+#X obj 15 111 hsl 80 15 0 1 0 0 ktbs-\$1-b3-snd ktbs-\$1-b3-rcv Phase
+5 8 0 10 -128992 -262144 -1 0 1;
+#X obj 15 128 hsl 80 15 0 1 0 0 ktb-\$1-b4-snd ktb-\$1-b4-rcv Rel 5
+8 0 10 -1 -162280 -262144 6800 1;
+#X obj 15 144 hsl 80 15 0 1 0 0 ktbs-\$1-b4-snd ktbs-\$1-b4-rcv Rel
+5 8 0 10 -128992 -262144 -1 6800 1;
+#X obj 15 161 hsl 80 15 0 1 0 0 ktb-\$1-b5-snd ktb-\$1-b5-rcv Amp 5
+8 0 10 -1 -162280 -262144 5800 1;
+#X obj 15 177 hsl 80 15 0 1 0 0 ktbs-\$1-b5-snd ktbs-\$1-b5-rcv Group
+5 8 0 10 -128992 -262144 -1 0 1;
+#X obj 305 11 ktbut \$1 b1;
+#X obj 191 56 s ktb-\$1-getinfo;
+#X obj 191 14 loadbang;
+#X obj 191 36 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 99 30 tgl 15 0 ktb-\$1-tl1-snd ktb-\$1-tl1-rcv lTrig 17 7 0
+10 -262144 -1 -1 0 1;
+#X obj 99 45 tgl 15 0 ktbs-\$1-tl1-snd ktbs-\$1-tl1-rcv -lg1- 17 7
+0 10 -262144 -1 -1 0 1;
+#X obj 99 62 tgl 15 0 ktb-\$1-tl2-snd ktb-\$1-tl2-rcv lEvnt 17 7 0
+10 -262144 -1 -1 1 1;
+#X obj 99 77 tgl 15 0 ktbs-\$1-tl2-snd ktbs-\$1-tl2-rcv -lg2- 17 7
+0 10 -262144 -1 -1 0 1;
+#X obj 99 94 tgl 15 0 ktb-\$1-tl3-snd ktb-\$1-tl3-rcv lTic 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 99 109 tgl 15 0 ktbs-\$1-tl3-snd ktbs-\$1-tl3-rcv -lg3- 17 7
+0 10 -262144 -1 -1 0 1;
+#X obj 99 126 tgl 15 0 ktb-\$1-tl4-snd ktb-\$1-tl4-rcv lSym 17 7 0
+10 -262144 -1 -1 0 1;
+#X obj 99 141 tgl 15 0 ktbs-\$1-tl4-snd ktbs-\$1-tl4-rcv lSwitch 17
+7 0 10 -262144 -1 -1 0 1;
+#X obj 99 159 tgl 15 0 ktb-\$1-tlREC-snd ktb-\$1-tlREC-rcv lOn 17 7
+0 10 -261234 -1 -1 1 1;
+#X obj 99 174 tgl 15 0 ktbs-\$1-tlREC-snd ktbs-\$1-tlREC-rcv lOn 17
+7 0 10 -261234 -1 -1 1 1;
+#X obj 335 597 hradio 9 1 0 16 kt-\$1-numgroup-snd kt-\$1-numgroup-rcv
+group 0 -6 0 10 -262144 -1 -1 0;
+#X obj 516 118 tgl 10 0 kt-\$1-switchgroup-snd kt-\$1-switchgroup-rcv
+switch 12 5 0 10 -262144 -1 -1 0 1;
+#X obj 192 189 r kt-\$1-numgroup-snd;
+#X obj 192 212 s \$1-group;
+#X obj 327 190 r kt-\$1-symgroup-snd;
+#X obj 327 213 s \$1-symgroup;
+#X obj 480 118 tgl 10 0 kt-\$1-symgroup-snd kt-\$1-symgroup-rcv sym
+12 5 0 10 -262144 -1 -1 0 1;
+#X obj 328 240 r kt-\$1-switchgroup-snd;
+#X obj 328 263 s \$1-switchgroup;
+#X obj 14 227 hradio 9 1 0 16 kt-\$1-pattern-snd kt-\$1-pattern-rcv
+pattern 0 -6 0 10 -262144 -1 -1 0;
+#X obj 306 328 loadbang;
+#X obj 306 351 symbol KT-\$1;
+#X obj 191 112 api KT-\$1 kt-\$1-numgroup kt-\$1-numgroup;
+#X obj 305 28 ktbut \$1 b2;
+#X obj 305 45 ktbut \$1 b3;
+#X obj 305 62 ktbut \$1 b4;
+#X obj 305 79 ktbut \$1 b5;
+#X obj 68 216 tgl 10 0 \$0-savepat-snd \$0-savepat-rcv store 12 5 0
+10 -258113 -1 -1 0 1;
+#X obj 15 375 r kt-\$1-pattern-snd;
+#X obj 19 344 s kt-\$1-pattern-rcv;
+#X msg 19 319 color 0 22 22;
+#X msg 38 300 color 13 22 22;
+#X obj 19 280 sel 0 1;
+#X obj 119 460 spigot;
+#X obj 15 450 spigot 1;
+#X obj 60 426 == 0;
+#X obj 19 259 r \$0-savepat-snd;
+#X obj 60 398 r \$0-savepat-snd;
+#X obj 15 510 s KT-\$1-pattern-snd;
+#X msg 118 486 _all_ store \$1;
+#X msg 15 483 _all_ load \$1;
+#X obj 155 535 s \$0-savepat-rcv;
+#X msg 155 515 0;
+#X obj 283 334 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 306 373 \$1 _pat_all_follow_ 0;
+#X obj 306 394 s PVJprojs-setap-snd;
+#X obj 306 304 apsubmaster KT-\$1 PVJprojs KT-\$1;
+#X obj 253 439 api SCENE kt-\$1-pattern kt-\$1-pattern 1;
+#X obj 142 253 r KT-\$1-pattern-snd;
+#X obj 142 275 route _all_;
+#X obj 142 297 route load;
+#X msg 142 319 set \$1;
+#X obj 252 463 scene_pattern SCENE kt-\$1-pattern KT-\$1;
+#X floatatom 183 353 5 0 0 0 - - -, f 5;
+#X obj 388 45 ktbut \$1 tl3;
+#X obj 388 62 ktbut \$1 tl4;
+#X obj 388 81 ktbut \$1 tlREC;
+#X obj 388 11 ktbut \$1 tl1;
+#X obj 388 28 ktbut \$1 tl2;
+#X obj 192 134 l api KT-\$1 kt-\$1-symgroup kt-\$1-symgroup;
+#X obj 192 154 l api KT-\$1 kt-\$1-switchgroup kt-\$1-switchgroup;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
+#X connect 26 0 27 0;
+#X connect 28 0 29 0;
+#X connect 31 0 32 0;
+#X connect 34 0 35 0;
+#X connect 35 0 58 0;
+#X connect 42 0 47 0;
+#X connect 42 0 48 0;
+#X connect 44 0 43 0;
+#X connect 45 0 43 0;
+#X connect 46 0 44 0;
+#X connect 46 1 45 0;
+#X connect 47 0 53 0;
+#X connect 47 0 56 0;
+#X connect 48 0 54 0;
+#X connect 49 0 48 1;
+#X connect 50 0 46 0;
+#X connect 51 0 47 1;
+#X connect 51 0 49 0;
+#X connect 53 0 52 0;
+#X connect 54 0 52 0;
+#X connect 56 0 55 0;
+#X connect 57 0 35 0;
+#X connect 58 0 59 0;
+#X connect 62 0 63 0;
+#X connect 63 0 64 0;
+#X connect 64 0 65 0;
+#X connect 64 0 67 0;
+#X connect 65 0 43 0;
+#X coords 0 -1 1 1 150 230 1 10 10;

@@ -1,0 +1,38 @@
+#N canvas 56 309 288 337 10;
+#X obj 20 125 inlet;
+#X obj 228 37 bng 15 250 50 0 \$0-get empty Get 17 7 0 10 -4034 -1
+-1;
+#X obj 17 236 r \$0-todevice;
+#X obj 16 215 s \$0-fromdevice;
+#X obj 61 146 s \$0-params;
+#X floatatom 140 37 8 -32768 32767 1 Speed #0-speedn-rcv #0-speedn-snd
+;
+#X obj 10 37 hsl 128 15 0 32767 0 0 \$0-speed-snd \$0-speed-rcv empty
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X floatatom 141 54 8 0 32767 1 Accel #0-acceln-rcv #0-acceln-snd;
+#X obj 10 54 hsl 128 15 50 32767 1 0 \$0-accel-snd \$0-accel-rcv empty
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X floatatom 142 92 8 -32768 32767 1 Dest #0-destn-rcv #0-destn-snd
+;
+#X obj 10 92 hsl 128 15 -32768 32767 0 0 \$0-dest-snd \$0-dest-rcv
+empty 0 8 0 10 -257985 -1 -1 6372 1;
+#X floatatom 141 71 8 0 32767 1 Decel #0-deceln-rcv #0-deceln-snd;
+#X obj 10 71 hsl 128 15 50 32767 1 0 \$0-decel-snd \$0-decel-rcv empty
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 61 124 r \$1-\$3-rcv;
+#X obj 16 170 FruitReceive \$1;
+#X obj 16 193 route \$2;
+#X obj 17 261 list prepend c \$2;
+#X obj 17 284 FruitSend \$1;
+#X obj 149 122 paramn \$0 speed 0 i;
+#X obj 149 140 paramn \$0 accel 1 i;
+#X obj 149 159 paramn \$0 decel 2 i;
+#X obj 148 181 paramn \$0 dest 10 i;
+#X text 3 2 FRamp fruitname rampaddress(decimal) rampname;
+#X connect 0 0 4 0;
+#X connect 2 0 16 0;
+#X connect 13 0 4 0;
+#X connect 14 0 15 0;
+#X connect 15 0 3 0;
+#X connect 16 0 17 0;
+#X coords 0 -1 1 1 260 90 1 5 20;

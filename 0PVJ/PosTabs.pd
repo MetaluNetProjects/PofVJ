@@ -1,0 +1,14 @@
+#N canvas 549 138 349 384 10;
+#X obj 27 172 table PVJ-PosX 100;
+#X obj 27 191 table PVJ-PosY 100;
+#X obj 27 210 table PVJ-PosRX 100;
+#X obj 27 229 table PVJ-PosRY 100;
+#X obj 27 248 table PVJ-PosRZ 100;
+#X obj 27 267 table PVJ-PosSc 100;
+#X obj 13 16 aptab PVJ-Pos PVJ-PosX PVJ-PosX 100 2;
+#X obj 13 34 aptab PVJ-Pos PVJ-PosY PVJ-PosY 100 2;
+#X obj 12 54 aptab PVJ-Pos PVJ-PosRX PVJ-PosRX 100 2;
+#X obj 12 73 aptab PVJ-Pos PVJ-PosRY PVJ-PosRY 100 2;
+#X obj 12 92 aptab PVJ-Pos PVJ-PosRZ PVJ-PosRZ 100 2;
+#X obj 12 110 aptab PVJ-Pos PVJ-PosSc PVJ-PosSc 100 2;
+#X coords 0 384 1 383 42 117 0;

@@ -1,0 +1,34 @@
+#N canvas 68 444 504 194 10;
+#X obj 28 23 gemhead 20;
+#X obj 28 89 pix_texture;
+#X obj 91 114 s tex_img-\$1;
+#X obj 28 45 alpha;
+#X obj 352 17 textureIsUsed img \$1;
+#X obj 352 40 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 28 67 pix_image;
+#X obj 207 20 loadbang;
+#X obj 207 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 207 114 getenv HOME;
+#X msg 207 158 open \$1/Datas/PVJ/\$2;
+#X obj 207 67 symbol \$2;
+#X obj 207 89 t b s;
+#X obj 207 136 pack s s;
+#X obj 267 41 route \$1;
+#X obj 267 19 r image-set;
+#X connect 0 0 3 0;
+#X connect 1 1 2 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 6 0 1 0;
+#X connect 7 0 8 0;
+#X connect 8 0 11 0;
+#X connect 9 0 13 0;
+#X connect 10 0 6 0;
+#X connect 11 0 12 0;
+#X connect 12 0 9 0;
+#X connect 12 1 13 1;
+#X connect 13 0 10 0;
+#X connect 14 0 11 0;
+#X connect 15 0 14 0;

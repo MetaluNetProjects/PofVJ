@@ -1,0 +1,30 @@
+#N canvas 370 343 311 286 10;
+#X floatatom 81 41 5 0 32767 1 Max #0-maxn-rcv #0-maxn-snd;
+#X obj 84 25 hsl 128 15 0 32767 0 0 \$0-max-snd \$0-max-rcv empty -2
+-8 0 10 -262144 -1 -1 0 1;
+#X floatatom 9 24 5 0 255 1 GainP #0-gainPn-rcv #0-gainPn-snd;
+#X floatatom 9 41 5 0 255 1 GainI #0-gainIn-rcv #0-gainIn-snd;
+#X floatatom 9 58 5 0 255 1 GainD #0-gainDn-rcv #0-gainDn-snd;
+#X obj 219 25 bng 15 250 50 0 \$0-get empty Get 17 7 0 10 -4034 -1
+-1;
+#X obj 29 87 inlet;
+#X obj 26 200 r \$0-todevice;
+#X obj 25 179 s \$0-fromdevice;
+#X obj 70 110 s \$0-params;
+#X obj 70 88 r \$1-\$3-rcv;
+#X obj 25 134 FruitReceive \$1;
+#X obj 25 157 route \$2;
+#X obj 26 225 list prepend c \$2;
+#X obj 26 248 FruitSend \$1;
+#X obj 157 86 paramn \$0 gainP 0 c;
+#X obj 157 104 paramn \$0 gainI 1 c;
+#X obj 157 122 paramn \$0 gainD 2 c;
+#X obj 157 141 paramn \$0 max 3 i;
+#X text 24 -14 FPid fruitname pidaddress(decimal) pidname;
+#X connect 6 0 9 0;
+#X connect 7 0 13 0;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 12 0 8 0;
+#X connect 13 0 14 0;
+#X coords 0 -1 1 1 260 70 1 5 5;

@@ -1,0 +1,299 @@
+#N canvas 290 192 1134 684 10;
+#X declare -lib Gem -path extended_view_toolkit/ -path extended_view_toolkit/data
+-path extended_view_toolkit/ev-in -path extended_view_toolkit/ev-main
+-path extended_view_toolkit/ev-pano -path extended_view_toolkit/ev-pro
+-path extended_view_toolkit/libs/gil -path extended_view_toolkit/libs/kollabs
+-path extended_view_toolkit/media -path extended_view_toolkit/ev-glsl
+;
+#X obj 74 211 cnv 15 300 250 empty empty OUTPUT_MODULES 20 12 0 14
+-204800 -66577 0;
+#X obj 42 74 cnv 15 300 130 empty empty FRAMEBUFFER 20 12 0 14 -262130
+-66577 0;
+#X obj 57 470 cnv 15 750 200 empty empty INPUT_MODULES 20 12 0 14 -204786
+-66577 0;
+#X obj 63 496 t a a;
+#X obj 42 10 cnv 15 160 50 empty empty INITIALISATIONS 20 12 0 14 -261234
+-66577 0;
+#X text 59 34 look inside:;
+#X obj 235 210 gemhead 50;
+#X obj 63 540 ev_grid 0;
+#X obj 378 313 cnv 15 400 150 empty empty empty 20 12 0 14 -261682
+-66577 0;
+#X text 606 332 click "create" to start;
+#X obj 351 266 t a;
+#X obj 351 333 t a;
+#X obj 351 390 t a;
+#X obj 379 139 cnv 15 220 170 empty empty empty 2 8 0 10 -191407 -66577
+0;
+#X obj 386 262 pix_texture;
+#X obj 386 191 tgl 15 0 empty show_framebuffer_content show_framebuffer_content
+17 7 0 10 -260097 -1 -1 0 1;
+#X obj 386 217 gemhead 102;
+#X obj 386 145 loadbang;
+#X msg 386 167 0;
+#N canvas 80 117 814 730 storage 0;
+#X obj 57 55 loadbang;
+#X text 128 56 The DATA STORAGE SYSTEM will be explained in a later
+example.;
+#X obj 84 187 getdir;
+#X obj 84 167 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 360 218 getdir;
+#X obj 360 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 360 146 t b b;
+#X obj 360 173 del 100;
+#X msg 421 178 \; /ds/0/store 0;
+#X obj 360 114 r EVT-SAVE;
+#X obj 57 113 r EVT-RELOAD;
+#X obj 57 135 t b b;
+#X obj 57 243 del 100;
+#X msg 57 266 \; /ds/0/scene 0;
+#X obj 57 79 del 1000;
+#X obj 58 352 ev_storage;
+#N canvas 5 75 397 237 declares 0;
+#X obj 18 76 declare -lib Gem -path extended_view_toolkit/ -path extended_view_toolkit/data
+-path extended_view_toolkit/ev-in -path extended_view_toolkit/ev-main
+-path extended_view_toolkit/ev-pano -path extended_view_toolkit/ev-pro
+-path extended_view_toolkit/libs/gil -path extended_view_toolkit/libs/kollabs
+-path extended_view_toolkit/media -path extended_view_toolkit/ev-glsl
+, f 47;
+#X restore 55 16 pd declares;
+#X obj 147 107 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 360 238 \; /ds/0/savefile \$1/evt-settings.txt;
+#X msg 84 210 \; /ds/0/loadfile \$1/evt-settings.txt;
+#X msg 141 243 \; /ds/1/loadfile \$1/win-settings.txt;
+#X msg 345 278 \; /ds/1/savefile \$1/win-settings.txt;
+#X msg 78 303 \; /ds/1/scene 0;
+#X obj 229 353 ev_storage 1;
+#X msg 592 453 \; /ds/1/scene \$1;
+#X msg 565 492 \; /ev/gemwin destroy \; /ev/gemwin create \; /ev/gemwin
+1;
+#X obj 565 392 r FULLSCREEN;
+#X obj 565 414 t b f;
+#X obj 475 398 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 473 423 s FULLSCREEN;
+#X obj 592 433 * 2;
+#X msg 678 392 3;
+#X msg 677 367 2;
+#X connect 0 0 14 0;
+#X connect 2 0 19 0;
+#X connect 2 0 20 0;
+#X connect 3 0 2 0;
+#X connect 4 0 18 0;
+#X connect 4 0 21 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 0;
+#X connect 7 0 5 0;
+#X connect 9 0 6 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 11 1 3 0;
+#X connect 12 0 13 0;
+#X connect 12 0 22 0;
+#X connect 14 0 11 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 27 1 30 0;
+#X connect 28 0 29 0;
+#X connect 30 0 24 0;
+#X connect 31 0 30 1;
+#X connect 32 0 30 1;
+#X restore 138 36 pd storage;
+#X obj 210 29 bng 30 250 50 0 EVT-SAVE empty SAVE 2 -8 0 10 -258113
+-1 -1;
+#X obj 245 29 bng 30 250 50 0 EVT-RELOAD empty RELOAD 2 -8 0 10 -4034
+-1 -1;
+#X obj 275 581 s PVJhead;
+#X obj 275 555 alpha;
+#X msg 420 320 \; /ev/gemwin create;
+#X obj 275 534 separator;
+#X obj 387 358 ev_gemwin 1;
+#X obj 63 95 gemhead 30;
+#X obj 385 285 rectangle 16 4;
+#X obj 630 175 s PVJPoshead;
+#X obj 615 27 r PVJhead;
+#X obj 660 135 s PVJprojsHead;
+#X obj 615 204 s PVJPosNumhead;
+#X obj 675 107 s PVJholesHead;
+#X obj 690 79 s PVJBGhead;
+#X obj 615 51 t a a a a a a;
+#X obj 645 154 s PVJOverHead;
+#X obj 383 543 ev_pro_22 lmask1;
+#X obj 382 600 ev_pro_22 lmask2;
+#X obj 383 501 t a;
+#X obj 590 545 ev_pro_22 rmask1;
+#X obj 590 598 ev_pro_22 rmask2;
+#X obj 86 454 t a;
+#X obj 783 505 t a;
+#X obj 263 253 separator;
+#X obj 235 232 t a a;
+#X obj 105 263 t a a a;
+#X obj 86 238 separator;
+#X obj 790 359 ev_buf NULL 0;
+#X obj 63 116 ev_buf MAINBUF 0;
+#X obj 790 337 gemhead 30;
+#X obj 883 524 colorRGB 0 0 0 1;
+#X obj 883 546 square 10 10;
+#X obj 929 494 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 877 95 r \, c \, l \, lmask1 \, lmask2 \, rmask1 \, rmask2;
+#X obj 877 70 t b f;
+#X obj 877 117 pack s f;
+#X msg 877 139 \; /ev/pro/\$1/cursor/mode \$2;
+#X obj 877 50 * 2;
+#X obj 877 21 tgl 15 0 empty empty CORNERS 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 396 240 r /ev/buf/MAINBUF/texture_id;
+#X obj 858 256 s /ev/pro/r/wall_data;
+#X obj 137 283 ev_pro_22_BCS r;
+#X msg 857 217 contrastOn \$1;
+#X obj 856 185 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 749 222 B \$1;
+#X obj 728 187 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 103 407 ev_pro_22_BCS l;
+#X obj 120 350 ev_pro_22_BCS c;
+#N canvas 9 75 603 493 GLOBAL 0;
+#X msg 480 251 contrastOn \$1;
+#X obj 203 32 tgl 15 0 GLOBAL-on GLOBAL-on on 17 7 0 10 -262144 -1
+-1 0 1;
+#X msg 221 250 B \$1;
+#X obj 107 84 hsl 128 15 -1 1 0 0 GLOBAL-brightness GLOBAL-brightness
+brightness -2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 185 361 t a;
+#X msg 107 335 C \$1;
+#X obj 107 49 hsl 128 15 0 1 0 0 GLOBAL-contrast GLOBAL-contrast contrast
+-2 -8 0 10 -1 -262144 -1 0 1;
+#X msg 350 336 S \$1;
+#X obj 106 201 r GLOBAL-contrast;
+#X obj 221 200 r GLOBAL-brightness;
+#X obj 106 117 hsl 128 15 -1 1 0 0 GLOBAL-saturation GLOBAL-saturation
+saturation -2 -8 0 10 -4034 -1 -1 0 1;
+#X obj 349 201 r GLOBAL-saturation;
+#X obj 481 204 r GLOBAL-on;
+#X obj 219 393 s /ev/pro/r/wall_data;
+#X obj 138 439 s /ev/pro/l/wall_data;
+#X obj 190 416 s /ev/pro/c/wall_data;
+#X obj 106 223 f;
+#X obj 221 222 f;
+#X obj 481 227 f;
+#X obj 349 223 f;
+#X obj 295 171 b;
+#X obj 295 147 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 106 244 pow 2;
+#X obj 107 289 * 10;
+#X obj 107 311 + 1;
+#X obj 350 246 t f f, f 6;
+#X obj 350 268 abs;
+#X obj 350 290 *;
+#X obj 350 312 * 10;
+#X floatatom 462 317 5 0 0 0 - - -, f 5;
+#X obj 264 50 ds_reg 0 GLOBAL-contrast;
+#X obj 264 71 ds_reg 0 GLOBAL-brightness;
+#X obj 264 94 ds_reg 0 GLOBAL-saturation;
+#X obj 264 116 ds_reg 0 GLOBAL-on;
+#X obj 464 125 r /ev/pro/r/wall_init;
+#X obj 431 81 r /ev/pro/l/wall_init;
+#X obj 451 104 r /ev/pro/c/wall_init;
+#X obj 431 139 b;
+#X obj 431 161 del 50;
+#X connect 0 0 4 0;
+#X connect 2 0 4 0;
+#X connect 4 0 14 0;
+#X connect 4 0 15 0;
+#X connect 4 0 13 0;
+#X connect 5 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 16 0;
+#X connect 9 0 17 0;
+#X connect 11 0 19 0;
+#X connect 12 0 18 0;
+#X connect 16 0 22 0;
+#X connect 17 0 2 0;
+#X connect 18 0 0 0;
+#X connect 19 0 25 0;
+#X connect 20 0 16 0;
+#X connect 20 0 17 0;
+#X connect 20 0 18 0;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 5 0;
+#X connect 25 0 26 0;
+#X connect 25 1 27 1;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 28 0 7 0;
+#X connect 28 0 29 0;
+#X connect 34 0 37 0;
+#X connect 35 0 37 0;
+#X connect 36 0 37 0;
+#X connect 37 0 38 0;
+#X connect 38 0 21 0;
+#X coords 0 -1 1 1 140 120 1 100 20;
+#X restore 378 14 pd GLOBAL;
+#X connect 3 0 7 0;
+#X connect 3 1 25 0;
+#X connect 6 0 45 0;
+#X connect 10 0 11 0;
+#X connect 10 0 62 1;
+#X connect 11 0 12 0;
+#X connect 11 0 68 1;
+#X connect 12 0 67 1;
+#X connect 14 0 28 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
+#X connect 17 0 18 0;
+#X connect 18 0 15 0;
+#X connect 23 0 22 0;
+#X connect 25 0 23 0;
+#X connect 27 0 49 0;
+#X connect 30 0 35 0;
+#X connect 35 0 32 0;
+#X connect 35 1 29 0;
+#X connect 35 2 36 0;
+#X connect 35 3 31 0;
+#X connect 35 4 33 0;
+#X connect 35 5 34 0;
+#X connect 39 0 37 0;
+#X connect 39 0 38 0;
+#X connect 39 0 40 0;
+#X connect 39 0 41 0;
+#X connect 42 0 39 0;
+#X connect 43 0 38 1;
+#X connect 43 0 37 1;
+#X connect 43 0 40 1;
+#X connect 43 0 41 1;
+#X connect 44 0 46 0;
+#X connect 45 0 47 0;
+#X connect 45 1 44 0;
+#X connect 46 0 67 0;
+#X connect 46 1 68 0;
+#X connect 46 2 62 0;
+#X connect 47 0 42 0;
+#X connect 48 0 51 0;
+#X connect 48 1 43 0;
+#X connect 49 0 3 0;
+#X connect 49 1 10 0;
+#X connect 50 0 48 0;
+#X connect 51 0 52 0;
+#X connect 53 0 51 1;
+#X connect 53 0 51 2;
+#X connect 54 0 56 0;
+#X connect 55 0 54 0;
+#X connect 55 1 56 1;
+#X connect 56 0 57 0;
+#X connect 58 0 55 0;
+#X connect 59 0 58 0;
+#X connect 60 0 14 1;
+#X connect 63 0 61 0;
+#X connect 64 0 63 0;
+#X connect 65 0 61 0;
+#X connect 66 0 65 0;

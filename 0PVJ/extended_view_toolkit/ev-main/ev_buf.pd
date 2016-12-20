@@ -1,0 +1,42 @@
+#N canvas 200 61 1055 651 10;
+#X obj 100 10 cnv 15 850 16 empty empty EXTENDED_VIEW_FRAMEBUFFER 20
+8 0 14 -233017 -66577 0;
+#X obj 99 318 cnv 15 360 60 empty empty creation_arguments: 5 12 0
+12 -162280 -1 0;
+#X obj 99 381 cnv 15 360 90 empty empty inlets/outlets 5 12 0 12 -233017
+-66577 0;
+#X text 231 441 other content;
+#X text 102 334 1st: module ID;
+#X obj 102 200 cnv 15 200 100 empty empty gui_controls 5 8 0 12 -204800
+-66577 0;
+#X text 102 239 scale x/y: scales the buffers;
+#X text 168 228 content;
+#X text 102 217 shift x/y: translates the buffers;
+#X text 168 248 content;
+#X text 102 261 dimen x/y: dimension of the FB;
+#X text 102 273 on/off: toggles state;
+#X text 682 591 outlet 1: gemlist outlet;
+#X text 895 568 outlet 2: texture id;
+#X text 104 429 Outlet 1: gemlist \, to be connectet to input \, group
+or;
+#X text 104 455 Outlet 2: texture id of the framebuffer;
+#X obj 590 591 outlet gemlist;
+#X obj 894 596 outlet texture_id;
+#X text 104 413 Inlet 2: gemframebuffer settings (see gemframebuffer-help)
+;
+#X text 105 400 Inlet 1: gemlist to be connected to gemhead;
+#X obj 492 60 cnv 15 200 40 empty empty inlets 1 8 0 12 -260097 -66577
+0;
+#X obj 503 78 inlet gemlist;
+#X obj 590 78 inlet settings;
+#X text 102 286 rotate: rotate content;
+#X text 102 346 2nd: storage domain;
+#X text 103 492 (c)2011 Peter Venus & Marian Weger \; /part of EXTENDED
+VIEW toolkit/ gpl v3;
+#X obj 570 216 ev_buf_dsp \$1 \$2;
+#X obj 100 115 abs/ev_buf_rcu \$1 \$2;
+#X connect 21 0 26 0;
+#X connect 22 0 26 1;
+#X connect 26 0 16 0;
+#X connect 26 1 17 0;
+#X coords 0 -1 1 1 270 75 1 100 100;

@@ -1,0 +1,140 @@
+#N canvas 2446 187 664 650 10;
+#X obj 1 1 cnv 15 45 415 empty empty \$1 2 10 0 8 -257985 -1 0;
+#X obj 79 -6 cnv 15 232 114 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj 84 -2 mknob 25 100 0 1 0 0 \$0-b1-snd \$0-b1-rcv 1 9 13 0 8
+-191407 -228856 -262144 0 1;
+#X obj 119 58 tgl 20 0 \$0-t1-snd \$0-t1-rcv empty 17 7 0 10 -261682
+-1 -1 0 1;
+#X obj 142 58 tgl 20 0 \$0-t2-snd \$0-t2-rcv empty 17 7 0 10 -261682
+-1 -1 0 1;
+#X obj 165 58 tgl 20 0 \$0-t3-snd \$0-t3-rcv empty 17 7 0 10 -261682
+-1 -1 0 1;
+#X obj 188 58 tgl 20 0 \$0-t4-snd \$0-t4-rcv empty 17 7 0 10 -261682
+-1 -1 0 1;
+#X obj 220 58 tgl 20 0 \$0-trec-snd \$0-trec-rcv empty 17 7 0 10 -261234
+-1 -1 0 1;
+#X obj 129 1 tgl 20 0 \$0-tshift-snd \$0-tshift-rcv empty 17 7 0 10
+-204786 -1 -1 0 1;
+#X obj 222 1 bng 15 250 50 0 \$0-bvert-snd \$0-bvert-rcv empty 17 7
+0 10 -204786 -4034 -1;
+#X obj 237 1 bng 15 250 50 0 \$0-bvrouge-snd \$0-brouge-rcv empty 17
+7 0 10 -261234 -258113 -1;
+#X obj 280 -2 mknob 25 100 0 1 0 0 \$0-b2-snd \$0-b2-rcv 2 9 13 0 8
+-191407 -228856 -262144 0 1;
+#X obj 182 20 mknob 25 100 0 1 0 0 \$0-b3-snd \$0-b3-rcv 3 9 13 0 8
+-191407 -228856 -262144 0 1;
+#X obj 84 31 mknob 25 100 0 1 0 0 \$0-b4-snd \$0-b4-rcv 4 9 13 0 8
+-191407 -228856 -262144 0 1;
+#X obj 280 31 mknob 25 100 0 1 0 0 \$0-b5-snd \$0-b5-rcv 5 9 13 0 8
+-191407 -228856 -262144 0 1;
+#X obj 295 92 bng 13 250 50 0 \$0-save_file_patt-snd \$0-save_file_patt-rcv
+empty 122 -6 1 6 -258113 -1 -262144;
+#X obj 82 92 hradio 13 1 0 16 \$0-file_patt_but-snd \$0-file_patt_but-rcv
+_1_.2_.3_.4_.5_.6_.7_.8_.9.10.11.12.13.14.15.16 0 -4 1 9 -262144 -1
+-1 0;
+#N canvas 1636 217 708 433 file_patt_but 0;
+#X msg 27 31 \$1;
+#X obj 203 36 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 203 67 sel 0 1;
+#X msg 203 88 color 0 22 22;
+#X msg 226 112 color 13 22 22;
+#X obj 71 88 demux;
+#X obj 101 112 t f f b;
+#X msg 164 145 0;
+#X obj 27 11 r \$0-file_patt_but-snd;
+#X obj 203 10 r \$0-save_file_patt-snd;
+#X obj 203 138 s \$0-file_patt_but-rcv;
+#X symbolatom 248 245 0 0 0 0 - - -;
+#X obj 236 292 del 50;
+#X msg 236 336 loadfile \$1;
+#X obj 236 273 t b s;
+#X obj 236 313 symbol;
+#X obj -63 300 symbol;
+#X obj -63 320 relativepath;
+#X obj 236 224 absolutepath;
+#X msg 28 142 load \$1;
+#X msg 107 145 store \$1;
+#X obj 78 198 list trim;
+#X obj 78 221 s \$2-pattern-snd;
+#X obj 236 356 s \$1-apmaster-rcv;
+#X obj -63 248 r \$1-apmaster-snd;
+#X obj -63 346 s \$0-apfile-rcv;
+#X obj 236 201 apsym \$2 \$3\$4-apfile \$0-apfile;
+#X obj 78 176 list prepend \$3\$4-apfile;
+#X msg 358 77 load \$1;
+#X obj 358 114 list trim;
+#X obj 358 92 list prepend \$3\$4-apfile;
+#X obj 368 143 print;
+#X msg 357 52 2;
+#X obj 60 338 print;
+#X obj 474 160 r \$0-apfile-rcv;
+#X obj -63 276 route loaded saved;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 1 0 5 1;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 10 0;
+#X connect 4 0 10 0;
+#X connect 5 0 19 0;
+#X connect 5 1 6 0;
+#X connect 6 1 20 0;
+#X connect 6 2 7 0;
+#X connect 7 0 1 0;
+#X connect 8 0 0 0;
+#X connect 9 0 1 0;
+#X connect 12 0 15 0;
+#X connect 13 0 23 0;
+#X connect 14 0 12 0;
+#X connect 14 1 15 1;
+#X connect 15 0 13 0;
+#X connect 16 0 17 0;
+#X connect 17 0 25 0;
+#X connect 18 0 11 0;
+#X connect 18 0 14 0;
+#X connect 19 0 27 0;
+#X connect 20 0 27 0;
+#X connect 21 0 22 0;
+#X connect 24 0 35 0;
+#X connect 26 0 18 0;
+#X connect 27 0 21 0;
+#X connect 28 0 30 0;
+#X connect 29 0 31 0;
+#X connect 30 0 29 0;
+#X connect 32 0 28 0;
+#X connect 35 0 16 0;
+#X connect 35 1 16 0;
+#X restore 164 156 pd file_patt_but;
+#X symbolatom 249 61 0 0 0 0 - #0-apfile-rcv #0-apfile-snd;
+#X obj 114 250 mull~ 0 10;
+#X floatatom 172 223 5 0 0 0 - - -;
+#X obj 143 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 5 21 MASTERtypeIN MASTERS \$2 \$0;
+#X obj 4 217 MASTERtypeOUT \$0-MASTERtype \$2 \$0;
+#X obj 171 191 init 2;
+#X text 333 -30 KEPtype nomUnique;
+#X obj 405 384 s \$0-SETTING;
+#X obj 316 434 apf \$0-FX del1_time \$0-del1_time;
+#X obj 532 391 vsl 15 128 0 127 0 0 \$0-del1_time-snd \$0-del1_time-rcv
+del1_time 0 -9 0 10 -262144 -1 -1 0 1;
+#X obj 165 512 r \$1-b1-snd;
+#X obj 91 512 r \$0-b1-snd;
+#X obj 266 216 l MASTERtypeIN \$1 1;
+#X obj 266 250 l MASTERtypeOUT\$1 1;
+#X obj 381 2 l KEPface \$1;
+#X obj 77 476 apsubmaster \$0-FX \$1-SETTING;
+#X obj 224 356 KEPboutonSHIFT \$1 1 Vitesse;
+#X obj 110 386 r \$1-Tempo-snd;
+#X obj 234 385 r \$1-Vitesse-snd;
+#X obj 377 23 KEPface \$1;
+#X obj 90 357 KEPbouton \$1 1 Tempo;
+#X obj 264 294 KEPCommon \$1;
+#X connect 19 0 23 0;
+#X connect 20 0 19 1;
+#X connect 21 0 24 0;
+#X connect 22 0 19 0;
+#X connect 24 0 20 0;
+#X coords 0 -1 1 1 47 417 2 0 0;

@@ -1,0 +1,111 @@
+#N canvas 1168 680 406 430 10;
+#X obj 11 11 cnv 15 347 393 empty empty empty 20 12 1 14 -1 -262144
+0;
+#N canvas 1720 308 343 237 SaveMaster 0;
+#X obj 11 11 cnv 15 99 122 empty empty MASTERS 5 12 1 14 -260097 -1
+0;
+#X obj 14 201 apmaster MASTERS;
+#X obj 59 104 bng 25 250 50 0 empty empty save 3 -7 1 10 -258113 -1
+-1;
+#X obj 15 76 bng 15 250 50 0 empty empty load 17 7 1 10 -4034 -1 -1
+;
+#X obj 15 55 bng 15 250 50 0 empty empty save_as 17 7 1 10 -258113
+-1 -1;
+#N canvas 2056 416 351 454 apmaster_autoload 0;
+#X obj 84 34 route loaded saved;
+#X obj 29 162 loadbang;
+#X msg 84 397 loadfile \$1;
+#X obj 84 78 symbol;
+#X obj 84 369 symbol;
+#X obj 29 184 del 100;
+#X msg 84 196 set \$1;
+#X msg 84 223 MASTERS-demo;
+#X obj 84 12 r MASTERS-apmaster-snd;
+#X obj 84 422 s MASTERS-apmaster-rcv;
+#X obj 27 119 split_path;
+#X obj 84 296 getdir;
+#X obj 84 319 pack s s;
+#X obj 84 274 t b a;
+#X obj 84 249 symbol;
+#X obj 84 343 makesymbol %s/ConfigMaster/%s;
+#X connect 0 0 3 0;
+#X connect 0 1 3 0;
+#X connect 1 0 5 0;
+#X connect 2 0 9 0;
+#X connect 3 0 10 0;
+#X connect 4 0 2 0;
+#X connect 5 0 7 0;
+#X connect 6 0 7 0;
+#X connect 7 0 14 0;
+#X connect 8 0 0 0;
+#X connect 10 1 6 0;
+#X connect 11 0 12 0;
+#X connect 12 0 15 0;
+#X connect 13 0 11 0;
+#X connect 13 1 12 1;
+#X connect 14 0 13 0;
+#X connect 15 0 4 0;
+#X restore 142 70 pd apmaster_autoload;
+#N canvas 1754 680 284 213 apmaster_symbol 0;
+#X obj 75 38 route loaded saved;
+#X obj 75 155 outlet;
+#X obj 75 67 symbol;
+#X obj 75 16 r MASTERS-apmaster-snd;
+#X obj 75 100 split_path;
+#X connect 0 0 2 0;
+#X connect 0 1 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 4 1 1 0;
+#X restore 154 41 pd apmaster_symbol;
+#X symbolatom 16 32 0 0 0 0 - - -;
+#X obj 144 167 s MASTERS-apmaster-rcv;
+#X msg 144 144 savein;
+#X connect 2 0 9 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 1;
+#X connect 6 0 7 0;
+#X connect 9 0 8 0;
+#X coords 0 -1 1 1 101 124 2 10 10;
+#X restore 252 17 pd SaveMaster;
+#X obj 79 145 cnv 15 177 124 empty empty MONITORS_OUT 20 10 0 14 -257985
+-1 0;
+#X obj 17 273 cnv 15 279 124 empty empty IN_LEVELS 20 10 0 14 -4160
+-257985 0;
+#X obj 21 291 INvu 1;
+#X obj 55 291 INvu 2;
+#X obj 89 291 INvu 3;
+#X obj 123 291 INvu 4;
+#X obj 157 291 INvu 5;
+#X obj 191 291 INvu 6;
+#X obj 225 291 INvu 7;
+#X obj 259 291 INvu 8;
+#X obj 261 145 cnv 15 91 124 empty empty FX_LEVELS 10 10 0 14 -4032
+-1 0;
+#X obj 265 163 FXvu 1;
+#X obj 286 163 FXvu 2;
+#X obj 307 163 FXvu 3;
+#X obj 328 163 FXvu 4;
+#X obj 17 145 cnv 15 61 124 empty empty STEREO 2 10 0 14 -4034 -1 0
+;
+#X obj 17 17 cnv 15 177 124 empty empty VCA 20 10 0 14 -260097 -1 0
+;
+#X obj 85 34 VCAvu 4;
+#X obj 22 34 VCAvu 1;
+#X obj 43 34 VCAvu 2;
+#X obj 64 34 VCAvu 3;
+#X obj 106 34 VCAvu 5;
+#X obj 127 34 VCAvu 6;
+#X obj 148 34 VCAvu 7;
+#X obj 169 34 VCAvu 8;
+#X obj 21 163 OUTvu 1;
+#X obj 50 163 OUTvu 2;
+#X obj 79 163 OUTvuM 3;
+#X obj 108 163 OUTvuM 4;
+#X obj 137 163 OUTvuM 5;
+#X obj 166 163 OUTvuM 6;
+#X obj 195 163 OUTvuM 7;
+#X obj 224 163 OUTvuM 8;
+#X obj 198 17 MASTERSvol;
+#X obj 300 273 REC-16;
+#X coords 0 -1 1 1 349 395 1 10 10;

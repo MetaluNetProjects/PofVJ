@@ -1,0 +1,18 @@
+#N canvas 599 186 792 388 10;
+#X obj 26 85 m_image 4;
+#X obj 26 104 m_image 5;
+#X obj 27 123 m_image 6;
+#X obj 28 142 m_image 7;
+#X obj 107 86 m_image 8;
+#X obj 108 105 m_image 9;
+#X obj 108 124 m_image 10;
+#X obj 109 143 m_image 11;
+#X obj 28 228 m_image 30 pic/equirectangular_oeil_bleu.png;
+#X obj 28 248 m_image 31 pic/equirectangular_oeil_brown.png;
+#X obj 28 269 m_image 32 pic/equirectangular_oeil_green.png;
+#X obj 29 290 m_image 33 pic/oeil_Blue.png;
+#X obj 28 308 m_image 34 pic/oeil_Brown.png;
+#X obj 28 329 m_image 35 pic/oeil_Green.png;
+#X obj 27 25 m_image 1;
+#X obj 27 46 m_image 2;
+#X obj 27 65 m_image 3;
